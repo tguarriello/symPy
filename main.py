@@ -5,7 +5,7 @@
 # ---------------------------------------------------------------------------------------
 
 import pygame, math, sys, random, os
-# from spider import *
+# from player import *
 
 
 # ---------------------------------------------------------------------------------------    
@@ -181,42 +181,24 @@ class Game(object):
     def draw(self):
         self.screen.fill((30,30,30))
         self.game_screen.fill((80,80,80))
-        self.screen.blit( self.hud_bg, pygame.Rect(768, 0, self.hud_bg.get_width(), self.hud_bg.get_height()))
         self.game_screen.blit( self.game_bg, pygame.Rect(0, 0, self.game_bg.get_width(), self.game_bg.get_height()))
         
-        # before = pygame.time.get_ticks()
-        
-        for connection in self.connection_list:
-            connection.draw(self.game_screen)
-        
-        
-        # after = pygame.time.get_ticks()
-            
         # print after - before, "millis"
         
         
-        for webNode in self.webNode_list:
-            webNode.draw(self.game_screen)
-        
-        for egg in self.egg_list:
-            egg.draw(self.game_screen)
-        
-        for enemy in self.enemy_list:
-            enemy.draw(self.game_screen)
+        # redraw actors from lists
+
         
         # redraw the player object (above all other objects)
         self.player.draw(self.game_screen)
-        
+       
         self.screen.blit(self.game_screen, (0, 0))
-        
-        # HUD
-        self.HUD.draw(self.screen, self.player, self.timer, len(self.egg_list), self.score, self.game_over, self.score_made)
-        
-        if self.score_made:
-            self.HUD.print_scores(self.screen)
-            
+ 
         if self.paused:
             self.screen.blit(self.pause_screen, (0, 0))
+ 
+            
+
         
         
 # ---------------------------------------------------------------------------------------    
@@ -226,7 +208,7 @@ class Game(object):
 # Overall game logic. Creates a Game object and calls its functions in order, draws to the screen
 
 pygame.init()
-pygame.display.set_caption("Motherly Instinct")
+pygame.display.set_caption("Symmetry Game Prototype")
 g = Game()
 pygame.key.set_repeat(500, 200)
 
