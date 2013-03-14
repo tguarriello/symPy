@@ -3,18 +3,18 @@ symPy
 
 A prototype exploring player/shadow symetry interactions made using the pygame library. 
 
-Probably largely inspired by "Braid." OK...definely inspired by braid.
+Probably largely inspired by "Braid."
 
 
-Concept
-=======
+#Concept
+
 In this game we want to mess with symetry a bunch and then maybe insult space a bit.
 
 There is a player character and a shadow character which have unified controls
 however there is some sort of difference. For example the player character moves
 right while the shadow moves left.
 
-###The game is bi-phasic:
+##Bi-phasic gameplay
 
 1. The player figures out how to make the 2 charcters contact each other
 2. The player figures out how to complete a level 
@@ -26,7 +26,7 @@ the character and the shadow is changed in some way complicating the problem
 or serving as a tool to complete the level.
 
 
-##Advanced Mechanics:
+##Advanced Mechanics
 
 1. Wrap: Walls warp player around to another map edge making it so that symetry 
 changes by flipping the player upside down or simply transporting them to a 
